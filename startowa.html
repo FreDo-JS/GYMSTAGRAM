@@ -171,9 +171,12 @@
         </H1>
         <img src="biceps.gif" alt="biceps animation" class="biceps-gif">
         <div class="login-div">
-            <input type="text" placeholder="login / email" class="user">
-            <input type="password" placeholder="hasło" class="password">
-            <button class="Log-button">ZALOGUJ</button>
+            <input type="text" placeholder="login / email" class="user" id="username">
+            <input type="password" placeholder="hasło" class="password" id="password">
+            <button class="Log-button" id="LogIn">ZALOGUJ</button>
+        </div>
+        <div class="error-message" id="error-message">
+
         </div>
     </div>  
     <div class="top-bar" id="low-bar"> ALL RIGHTS RESERVED © GYMSTAGRAM 2024</div>
@@ -182,7 +185,46 @@
 
 
 <script>
-    const aboutUsPage=document.getElementById('aboutUsBtn');
+    //////////////////////////////////////////////////////////////////////
+    const usernameInput = document.getElementById('username'); //dane pod walidacje
+    const passwordInput = document.getElementById('password');
+    const errorMessage = document.getElementById('error-message'); 
+
+
+    function isValidUsername(username){
+        const usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
+        return usernameRegex.test(username);
+    }
+    function isValidPassword(password){
+        return password.length>=6;
+    }
+        const LogIn=document.getElementById('LogIn');
+    LogIn.addEventListener("click",()=>{
+
+        errorMessage.textContent=' ';
+
+        const usernameValue=usernameInput.value.trim();
+        const passwrodValue=passwordInput.value.trim();
+
+        if(usernameValue==='' || passwrodValue==='')
+        {
+            errorMessage.textContent="Wypełnij wszystkie pola"
+            return;
+        }
+
+        if(!isValidUsername(usernameValue)){
+            errorMessage.textContent="Nazwa uzytkownika powinna zawierać od 3 do 16 znaków"
+            return;
+        }
+        if(!isValidPassword(passwrodValue)){
+            errorMessage.textContent="Podaj poprawna dlugosc hasla"
+            return;
+        }
+    });
+
+
+    ////////////////////////////////////////////////////////////////////////
+    const aboutUsPage=document.getElementById('aboutUsBtn'); //odnosniki do podstron
     
     aboutUsPage.addEventListener('click',()=>{
         window.location.href = 'onas.html';
@@ -191,6 +233,8 @@
     RegistationButton.addEventListener('click',()=>{
         window.location.href='rejestracja.html'
     })
+
+
 
 </script>
 </html>
