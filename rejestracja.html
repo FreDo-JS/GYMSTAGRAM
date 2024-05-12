@@ -82,6 +82,9 @@
         function isValidPassword(password) {
             return password.length >= 6; 
         }
+        function isValidUsername(username){
+            return (username.length >=3 || username.length<16)
+        }
     
         
         form.addEventListener('submit', function(event) {
@@ -99,7 +102,10 @@
                 errorMessage.textContent = 'Wypełnij wszystkie pola.';
                 return;
             }
-    
+            if(!isValidUsername(usernameValue)){
+                errorMessage.textContent="Podaj nazwe użytkownika od 3 do 16 znaków. ";
+                return;
+            }
            
             if (!isValidEmail(emailValue)) { //chuj kurwa i chuj
                 errorMessage.textContent = 'Podaj poprawny adres email.';
