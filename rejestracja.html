@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja - GYMSTAGRAM</title>
+    <style>
+        .registration-form {
+            margin-top: 50px;
+            display: grid;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .registration-form input[type="text"],
+        .registration-form input[type="email"],
+        .registration-form input[type="password"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .registration-form input[type="submit"] {
+            width: 200px;
+            padding: 10px;
+            margin: 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+<body>
+  
+
+    <div class="main-container">
+        <div class="registration-form">
+            <h2>Rejestracja</h2>
+            <form action="process_registration.php" method="POST" id="registration-form">
+                <input type="text" name="username" placeholder="Nazwa użytkownika" id="username">
+                <br>
+                <input type="email" name="email" placeholder="Adres email" id="email">
+                <br>
+                <input type="password" name="password" placeholder="Hasło" id="password">
+                <br>
+                <input type="password" name="confirm_password" placeholder="Potwierdź hasło" id="confirm_password">
+                <br>
+                <input type="submit" value="Zarejestruj się">
+            </form>
+            
+            <div class="error-message" id="error-message">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('registration-form');
+        const usernameInput = document.getElementById('username');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm_password');
+        const errorMessage = document.getElementById('error-message');
+    
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+    
+        
+        function isValidPassword(password) {
+            return password.length >= 6; 
+        }
+    
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            errorMessage.textContent = '';
+    
+            const usernameValue = usernameInput.value.trim();
+            const emailValue = emailInput.value.trim();
+            const passwordValue = passwordInput.value.trim();
+            const confirmPasswordValue = confirmPasswordInput.value.trim();
+    
+            
+            if (usernameValue === '' || emailValue === '' || passwordValue === '' || confirmPasswordValue === '') {
+                errorMessage.textContent = 'Wypełnij wszystkie pola.';
+                return;
+            }
+    
+           
+            if (!isValidEmail(emailValue)) { //chuj kurwa i chuj
+                errorMessage.textContent = 'Podaj poprawny adres email.';
+                return;
+            }
+    
+            
+            if (!isValidPassword(passwordValue)) {
+                errorMessage.textContent = 'Hasło musi mieć co najmniej 6 znaków.';
+                return;
+            }
+    
+            
+            if (passwordValue !== confirmPasswordValue) {
+                errorMessage.textContent = 'Podane hasła nie zgadzają się.';
+                return;
+            }
+    
+    
+        });
+    </script>
+</body>
+</html>
