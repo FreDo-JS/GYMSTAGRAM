@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witamy na GYMstagramie!</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+            font-family: Fantasy;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+          
+            background-image: linear-gradient(to right, #dfd8d8, #5f5654);
+            position: relative; /* relatywne do całej strony */
+            padding-left: 25%; 
+            padding-right: 25%; 
+            
+            
+        }
+        .margin-left,
+        .margin-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 25%; /* Szerokość marginesu */
+            background-color: rgb(32, 30, 30); 
+        }
+        .margin-left {
+            left: 0; 
+        }
+        .margin-right {
+            right: 0; 
+        }
+        
+        .top-bar {
+            height: 35px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 1px;
+        }
+       
+        .button {
+            height: 25px;
+            line-height: 0;
+            margin: 5px;
+            padding: 8px 16px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover{
+            color: black;
+        }
+        .register-div{
+            display: flex;
+            align-items: center;
+            
+        }
+        .plog{
+            padding: 10px;
+        }
+        .register-button {
+            background-color: #ff0000;
+            margin-left: 15px;
+            height: 25px;
+            padding: 8px 16px;
+            line-height: 0;
+        }
+
+        .sidepages{
+            padding: 10px;
+        }
+
+        .main-container {
+            margin-top: 100px;
+            flex: 1; /* Wypełnienie pozostałej przestrzeni */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 50px; /* Dodatkowy odstęp na dole */
+        }
+        .mainWord {
+            margin-bottom: 40px;
+            letter-spacing: 6px;
+            font-size: 60px;
+            font-family: Fantasy;
+            text-shadow: 1px 1px 3px rgba(1, 1, 1, 2);
+            transform: perspective(100px) rotateX(10deg);
+            position: relative;
+            perspective: 500px; /* Ustawienie perspektywy */
+        }
+        .gymWord {
+            font-size: 70px;
+            color: red;
+            letter-spacing: 7px;
+            display: inline-block;
+            transform-origin: center bottom;
+            
+        }
+        .biceps-gif {
+            width: 250px;
+            height: auto; 
+        }
+        .login-div{
+            margin-top: 35px;
+            display: grid;
+        }
+        .user, .password{
+            margin: 7px;
+            text-align: center;
+            width: 300px;
+            height: 20px;
+            border: 5px solid black;
+            border-radius: 20px;
+            font-weight: bolder;
+        }
+        .Log-button{
+            height: 40px;
+            line-height: 0;
+            margin: 5px;
+            padding: 8px 16px;
+            background-color: #ff0000;
+            
+            color: white;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .Log-button:hover{
+            border:5px solid black;
+            cursor: pointer;
+            color: black;
+            font-weight: 700;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+       #low-bar{
+        color: gray;
+       }
+    </style>
+</head>
+<body>
+    <div class="margin-left"></div> <!-- Lewy margines -->
+    <div class="margin-right"></div> <!-- Prawy margines -->
+    <div class="top-bar">
+        
+        <div class="register-div">
+            <p class="plog">NIE MASZ JESZCZE KONTA?</p>
+            <button class="button register-button" id="register-button">REJESTRACJA</button>
+        </div>
+        <div class="sidepages">
+            <button class="button" id="aboutUsBtn">O NAS</button>
+            <button class="button">KONTAKT</button>
+        </div>
+    </div>
+    <div class="main-container">
+        <H1 class="mainWord">
+            <span class="gymWord">GYM</span>STAGRAM
+        </H1>
+        <img src="biceps.gif" alt="biceps animation" class="biceps-gif">
+        <div class="login-div">
+            <input type="text" placeholder="login / email" class="user">
+            <input type="password" placeholder="hasło" class="password">
+            <button class="Log-button">ZALOGUJ</button>
+        </div>
+    </div>  
+    <div class="top-bar" id="low-bar"> ALL RIGHTS RESERVED © GYMSTAGRAM 2024</div>
+    
+</body>
+
+
+<script>
+    const aboutUsPage=document.getElementById('aboutUsBtn');
+    
+    aboutUsPage.addEventListener('click',()=>{
+        window.location.href = 'onas.html';
+    })
+    const RegistationButton=document.getElementById('register-button');
+    RegistationButton.addEventListener('click',()=>{
+        window.location.href='rejestracja.html'
+    })
+
+</script>
+</html>
