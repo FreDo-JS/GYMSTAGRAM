@@ -1,0 +1,150 @@
+/* styles.css */
+body {
+  display: flex;
+  flex-direction: column; /* Aby wyśrodkować również w pionie */
+}
+
+.main-content {
+  width: 100%; /* zajmuje całą szerokość */
+  max-width: 1200px; /* opcjonalne ograniczenie szerokości, aby strona nie była zbyt szeroka */
+  margin: auto; /* Wyrównanie do środka */
+}
+
+/* Stylizacja paska nawigacyjnego */
+nav {
+  background-color: #666; /* Szary kolor tła */
+  color: #fff; /* Biały kolor tekstu */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Stylizacja linków w pasku nawigacyjnym */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+/* Stylizacja pola wyszukiwania */
+.search-box {
+  display: flex;
+  margin-right: 20px;
+}
+
+/* Stylizacja przycisku */
+.btn {
+  background-color: #666;
+  color: white;
+  padding: 10px 20px;
+  border-color: #333; /* Ciemny szary kolor obramowania */
+  cursor: pointer;
+}
+
+/* Stylizacja menu rozwijanego */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Stylizacja zawartości menu rozwijanego */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #666; /* Szary kolor tła */
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Stylizacja linków w menu rozwijanym */
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Pokazanie zawartości menu rozwijanego po najechaniu na nie */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/*Style dodawania posta*/
+.post-section {
+  display: flex; /* Ustawienie na flex, aby elementy były wyświetlane w jednej linii */
+  flex-direction: column; /* Układanie elementów w kolumnie */
+}
+
+.post-section h2 {
+  margin-top: 0;
+}
+
+.post-section textarea {
+  width: 100%;
+  height: 100px; /* Zachowanie wysokości pola */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.post-section .btn-post {
+  background-color: #666;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end; /* Przesunięcie przycisku do końca kontenera */
+}
+
+.chat-bar {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.chat-bar h2 {
+  margin-top: 0px;
+}
+
+.chat-list ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.chat-list li {
+  padding: 10px 0;
+  list-style-type: none;
+}
+
+.post-list {
+  margin-top: 20px;
+}
+
+.post-item {
+  border-bottom: 1px solid #ccc; /* Jasny szary kolor obramowania */
+  padding: 10px 0;
+}
+
+.post-item h3 {
+  margin: 0 0 5px 0;
+}
+
+.comment-list {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.comment-item {
+  border-bottom: 1px solid #eee; /* Bardziej jasny szary kolor obramowania */
+  padding: 5px 0;
+}

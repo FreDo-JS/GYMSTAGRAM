@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test bazy danych</title>
+  </head>
+  <body>
+    <h1>Test połączenia z bazą danych</h1>
+
+    <?php
+    // Połączenie z bazą danych
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $dbname = "gymstagram";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Sprawdzenie połączenia
+    if ($conn->connect_error) { die("Connection failed: " .
+    $conn->connect_error); } echo "
+    <p>Połączenie z bazą danych udane!</p>
+    "; // Pobranie danych z tabeli $sql = "SELECT Imię, Nazwisko FROM
+    użytkownicy"; $result = $conn->query($sql); if ($result->num_rows > 0) {
+    echo "
+    <h2>Użytkownicy:</h2>
+    "; echo "
+    <ul>
+      "; while($row = $result->fetch_assoc()) { echo "
+      <li>" . $row["Imię"] . " " . $row["Nazwisko"] . "</li>
+      "; } echo "
+    </ul>
+    "; } else { echo "Brak danych."; } // Zamknięcie połączenia $conn->close();
+    ?>
+  </body>
+</html>
