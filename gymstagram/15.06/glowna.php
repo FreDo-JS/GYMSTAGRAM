@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GYMstagram</title>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/clipboard.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/phone.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/eye.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/toggle-on.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/arrow-left-o.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/arrow-left.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    
     <style>
         body {
-            background-color: #f1f1f1;
-            margin: 0;
+            background-color: #cbc8c8;            
             padding: 0;
-            font-family: "Roboto", sans-serif;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,6 +30,7 @@
             gap: 20px;
         }
         nav {
+            height: 70px;
             position: fixed;
             top: 0;
             left: 0;
@@ -49,8 +56,20 @@
             text-decoration: none;
             margin-right: 20px;
         }
-        nav span.logo {
+        nav h1 {
             font-weight: bold;
+            font-size: 34px;
+            letter-spacing: 2px;
+            margin-left: 3%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .GymWord{
+             
+            color: red;
+            letter-spacing: 1.5px;
+        
         }
         .search-box {
             display: flex;
@@ -204,7 +223,7 @@
 </head>
 <body>
     <nav>
-        <span class="logo">GYMstagram</span>
+        <h1 id="gymwordNav"><span class="GymWord">GYM</span>stagram <img src="gyms.png"  class="logoNav" alt="logo" width="50px "></h1>
         <div class="nav-icons">
             <button class="search-btn">
                 <svg class="search-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
